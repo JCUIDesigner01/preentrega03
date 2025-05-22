@@ -1,0 +1,699 @@
+// ======================== FOUNDATIONS ======================== //
+// ====== COLORS ====== //
+// PRIMITIVE COLORS //
+//B&w//
+$color-black: #131720;
+$color-white: #ffffff;
+//primary//
+$color-primary-medium: #ee5a5f;
+//Neutral//
+$color-neutral-lightest: #dbe0eb;
+$color-neutral-light: #bbc5d8;
+$color-neutral-medium: #7a8db3;
+$color-neutral-dark: #36435e;
+$color-neutral-darkest: #232c3e;
+
+// SEMANTIC COLORS //
+//Background//
+$color-bg-primary: $color-black;
+$color-bg-secondary: $color-neutral-darkest;
+//Surface//
+$color-surface-card: $color-neutral-darkest;
+$color-surface-card-hover: $color-neutral-dark;
+$color-surface-alert: $color-primary-medium;
+$color-surface-alert-disabled: $color-neutral-medium;
+$color-surface-button-primary: $color-white;
+$color-surface-button-primary-hover: $color-neutral-light;
+$color-surface-button-primary-disabled: $color-neutral-lightest;
+//Icon//
+$color-icon-primary: $color-black;
+$color-icon-secondary: $color-white;
+$color-icon-alert: $color-primary-medium;
+//Text//
+$color-text-title: $color-white;
+$color-text-paragraph: $color-neutral-light;
+$color-text-label: $color-white;
+$color-text-label-inversed: $color-black;
+$color-text-label: $color-white;
+$color-text-input: $color-white;
+$color-text-button-primary: $color-black;
+$color-text-button-secondary: $color-white;
+//Border//
+$color-border-secondary: $color-white;
+$color-border-secondary-disabled: $color-neutral-medium;
+//---------------------------------------------------------------//
+// ====== TYPOGRAPHY ====== //
+//Family//
+$font-family-01: 'Urbanist', sans-serif;
+$font-family-02: 'Lato', sans-serif;
+//Weight//
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+//Size//
+$font-size-hero: 7rem;       // 112px
+$font-size-3xl: 6rem;        // 96px
+$font-size-2xl: 4rem;        // 64px
+$font-size-xl: 3rem;         // 48px
+$font-size-lg: 2rem;         // 32px
+$font-size-md: 1.5rem;       // 24px
+$font-size-sm: 1.125rem;     // 18px
+$font-size-xs: 1rem;         // 16px
+$font-size-2xs: 0.875rem;    // 14px
+$font-size-3xs: 0.75rem;     // 12px
+//Line height//
+$font-lh-hero: 7.625rem;    // 122px
+$font-lh-3xl: 6.625rem;     // 106px
+$font-lh-2xl: 4.625rem;     // 74px
+$font-lh-xl: 3.625rem;      // 58px
+$font-lh-lg: 2.625rem;      // 42px
+$font-lh-md: 2.125rem;      // 34px
+$font-lh-sm: 1.75rem;       // 28px
+$font-lh-xs: 1.625rem;      // 26px
+$font-lh-2xs: 1.5rem;       // 24px
+$font-lh-3xs: 1.375rem;     // 22px
+//---------------------------------------------------------------//
+// ====== PADDING & GAP ====== //
+$padding-gap-04: 4px;
+$padding-gap-08: 8px;
+$padding-gap-12: 12px;
+$padding-gap-16: 16px;
+$padding-gap-24: 24px;
+$padding-gap-32: 32px;
+$padding-gap-40: 40px;
+$padding-gap-48: 48px;
+//---------------------------------------------------------------//
+// ====== BORDER ====== //
+//Radius//
+$border-radius-00: none;
+$border-radius-08: 8px;
+$border-radius-16: 16px;
+$border-radius-24: 24px;
+$border-radius-32: 32px;
+$border-radius-full: 99px;
+//Size//
+$border-width-none: none;
+$border-width-normal: 1px;
+$border-width-focus: 2px;
+//---------------------------------------------------------------//
+// ====== BREAKPOINTS ====== //
+//Tablet//
+$breakpoint-tablet: 768px;
+//Desktop//
+$breakpoint-desktop: 1024px;
+
+
+
+/* ======================== GENERAL ======================== */
+*{
+  margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+/* ======================== TEXT STYLES ======================== */
+//* Mixin *//
+@mixin font-style($font-family,$font-size,$font-weight,$font-lh,$font-color){
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $font-lh;
+  color: $font-color;
+}
+/* Hero */
+.text-hero {
+  @include font-style($font-family-01,$font-size-2xl,$font-weight-normal,$font-lh-2xl,$color-text-title);
+  text-align: center;
+  /* Responsive */
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-3xl;
+    line-height: $font-lh-3xl;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-hero;
+    line-height: $font-lh-hero;
+  }
+}
+/* H1 */
+.text-h1 {
+  @include font-style($font-family-01,$font-size-xl,$font-weight-semibold,$font-lh-xl,$color-text-title);
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-2xl;
+    line-height: $font-lh-2xl;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-3xl;
+    line-height: $font-lh-3xl;
+  }
+}
+/* H2 */
+.text-h2 {
+  @include font-style($font-family-01,$font-size-md,$font-weight-semibold,$font-lh-md,$color-text-title);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-lg;
+    line-height: $font-lh-lg;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-xl;
+    line-height: $font-lh-xl;
+  }
+}
+/* H3 */
+.text-h3 {
+  @include font-style($font-family-01,$font-size-sm,$font-weight-semibold,$font-lh-sm,$color-text-title);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-md;
+    line-height: $font-lh-md;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-lg;
+    line-height: $font-lh-lg;
+  }
+}
+/* H4 */
+.text-h4 {
+  @include font-style($font-family-01,$font-size-xs,$font-weight-semibold,$font-lh-xs,$color-text-title);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-sm;
+    line-height: $font-lh-sm;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-md;
+    line-height: $font-lh-md;
+  }
+}
+/* Paragraph */
+.text-p {
+  @include font-style($font-family-02,$font-size-2xs,$font-weight-normal,$font-lh-2xs,$color-text-paragraph);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-xs;
+    line-height: $font-lh-xs;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-sm;
+    line-height: $font-lh-sm;
+  }
+}
+/* Label */
+.text-label {
+  @include font-style($font-family-02,$font-size-2xs,$font-weight-bold,$font-lh-2xs,$color-text-label);
+}
+.text-label-inversed {
+  @include font-style($font-family-02,$font-size-2xs,$font-weight-bold,$font-lh-2xs,$color-text-label-inversed);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-2xs;
+    line-height: $font-lh-2xs;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-xs;
+    line-height: $font-lh-xs;
+  }
+}
+/* Link */
+.text-link {
+  @include font-style($font-family-02,$font-size-2xs,$font-weight-semibold,$font-lh-2xs,$color-text-title);
+
+  text-decoration: underline;
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-xs;
+    line-height: $font-lh-xs;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-sm;
+    line-height: $font-lh-sm;
+  }
+}
+/* Disclamer */
+.text-disclamer {
+  @include font-style($font-family-02,$font-size-3xs,$font-weight-normal,$font-lh-3xs,$color-text-paragraph);
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-2xs;
+    line-height: $font-lh-2xs;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-xs;
+    line-height: $font-lh-xs;
+  }
+}
+
+
+
+/* ======================== COMPONENTS ======================== */
+/* ====== BUTTON ====== */
+//Mixin//
+@mixin button-style($padding,$border-radius,$bg-color,$text-color){
+  padding-left: $padding;
+  padding-right: $padding;
+  border-radius: $border-radius;
+  width: 100%;
+  background-color: $bg-color;
+  color: $text-color;
+  font-size: $font-size-xs;
+  font-family: $font-family-02;
+  line-height: $font-lh-xs;
+  font-weight: $font-weight-semibold;
+  transition: background-color 0.5s ease;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    width: auto;
+  }
+  
+  &:hover {
+    background-color: $color-surface-button-primary-hover;
+  }
+}
+/* Button-primary */
+.button-primary{
+  @include button-style($padding-gap-24,$border-radius-16,$color-surface-button-primary,$color-text-button-primary);
+  border-style: none;
+  height: 56px;
+}
+
+
+/* Button-secondary */
+.button-secondary{
+  @include button-style($padding-gap-24,$border-radius-16,$color-bg-primary,$color-text-button-secondary);
+  border-style: solid;
+  border-color: $color-border-secondary;
+  height: 56px;
+
+  &:hover {
+    background-color: $color-surface-card;
+  }
+}
+
+.button-group{
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: $padding-gap-16;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    grid-template-columns: repeat(2,1fr);
+    gap: $padding-gap-16;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    grid-template-columns: repeat(2,1fr);
+    gap: $padding-gap-16;
+  }
+}
+/* ====== CARD ====== */
+//Mixin//
+@mixin card-style ($padding,$gap,$border-radius,$bg-color){
+  padding: $padding;
+  gap: $gap;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+/* Card project */
+.card-project{
+  @include card-style($padding-gap-16,$padding-gap-16,$border-radius-32,$color-surface-card);
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: $color-surface-card-hover;
+    transform: scale(1.05);
+  }
+}
+.card-project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+/* Card service */
+.card-service{
+  @include card-style($padding-gap-16,$padding-gap-16,$border-radius-32,$color-surface-card)
+}
+/* Card image */
+.card-image{
+  border-radius: $border-radius-16;
+  width: 100%;
+}
+/* Card Icon */
+.card-icon{
+  width: 32px;
+  height: 32px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 32px;
+  height: 32px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* Card group */
+.card-group{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $padding-gap-24;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $padding-gap-24;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* Card group proyecto*/
+.card-process{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $padding-gap-24;
+
+  @media (min-width: $breakpoint-tablet) {
+    gap: $padding-gap-24;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====== INPUT ====== */
+/* Input box */
+.input-box{
+  padding: $padding-gap-12;
+  border-radius: $border-radius-08;
+  background-color: $color-surface-card;
+  height: 48px;
+  transition: background-color 0.5s ease;
+  border-style: none;
+  width: 100%;
+  color: $color-text-input;
+
+  &:hover {
+    background-color: $color-surface-card-hover;
+  }
+}
+/* Textarea box */
+.textarea-box{
+  padding: $padding-gap-12;
+  border-radius: $border-radius-08;
+  background-color: $color-surface-card;
+  height: 125px;
+  transition: background-color 0.5s ease;
+  border-style: none;
+  width: 100%;
+  color: $color-text-input;
+
+  &:hover {
+    background-color: $color-surface-card-hover;
+  }
+}
+/* Input item */
+.input-item{
+  display: flex;
+  flex-direction: column;
+  gap: $padding-gap-08;
+  width: 100%;
+}
+/* Input group */
+.form{
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: $padding-gap-24;
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 60%;
+  }
+}
+/* ====== NAVIGATION ====== */
+
+// Mixin
+@mixin nav-item-style($padding, $border-radius, $bg-color, $margin, $text-color, $font-family, $text-size, $text-lh,$text-weight) {
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: $margin;
+  margin-right: $margin;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: $font-family;
+  font-size: $text-size;
+  line-height: $text-lh;
+  text-align: center;
+  height: 40px;
+  font-weight: $text-weight;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nav item */
+.nav-item {
+  @include nav-item-style($padding-gap-12, $border-radius-full, none, $padding-gap-04, $color-text-label, $font-family-02, $font-size-2xs, $font-lh-2xs,$font-weight-bold);
+  transition: background-color 0.25s ease;
+  width: 100%; // Full width in mobile
+
+  &:hover {
+    background-color: $color-surface-card-hover;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-left: $padding-gap-12;
+    padding-right: $padding-gap-12;
+    width: auto; // Restore auto width on tablet+
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-left: $padding-gap-16;
+    padding-right: $padding-gap-16;
+  }
+}
+
+.nav-item-select {
+  @include nav-item-style($padding-gap-12, $border-radius-full, $color-surface-alert, $padding-gap-04, $color-text-label-inversed, $font-family-02, $font-size-2xs, $font-lh-2xs,$font-weight-bold);
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: auto;
+  }
+}
+
+/* Nav group */
+.nav-group {
+  padding: $padding-gap-12;
+  border-radius: $border-radius-32;
+  background-color: $color-surface-card;
+  display: flex;
+  flex-direction: column; // Vertical in mobile
+  align-items: stretch;
+  gap: $padding-gap-04;
+  width: 100%; // Full width in mobile
+
+  @media (min-width: $breakpoint-tablet) {
+    border-radius: $border-radius-full;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    padding: $padding-gap-12;
+    gap: $padding-gap-12;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    border-radius: $border-radius-full;
+    padding: $padding-gap-12;
+    
+  }
+}
+
+/* ====== BADGE ====== */
+//Mixin//
+@mixin badge-style ($padding01,$padding02,$border-radius,$bg-color){
+  padding: $padding01 $padding02;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+}
+.badge{
+  @include badge-style ($padding-gap-04,$padding-gap-08,$border-radius-08,$color-surface-alert);
+  width: fit-content;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding-gap-04 $padding-gap-08;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding-gap-04 $padding-gap-12;
+  }
+}
+
+/* ====== PROFILE ====== */
+/* Profile group */
+.profile-group {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-gap-24;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+/* Profile image */
+.profile-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../img/profile.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: $border-radius-32;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 40vh;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    height: auto;
+  }
+}
+/* Profile info */
+.profile-info {
+  border-radius: $border-radius-32;
+  background-color: $color-surface-card;
+  padding: $padding-gap-16;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  gap: $padding-gap-16;
+}
+
+/* ====== SECTIONS ====== */
+//Mixin//
+@mixin section-style ($padding01,$padding02,$bg-color,$gap){
+  padding: $padding01 $padding02;
+  background-color: $bg-color;
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: $gap;
+  width: 100%;
+}
+/* = Header = */
+.section-header{
+  @include section-style ($padding-gap-24,$padding-gap-24,$color-bg-primary,$padding-gap-24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../img/header.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 10vh;
+  object-fit: cover;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding-gap-24 $padding-gap-24;
+    gap: $padding-gap-24;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding-gap-32 $padding-gap-48;
+    gap: $padding-gap-24;
+  }
+}
+.section-header-banner{
+  @include section-style (none,none,none,$padding-gap-24);
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+/* = Content = */
+.section-content{
+  @include section-style ($padding-gap-24,$padding-gap-24,$color-bg-primary,$padding-gap-24);
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding-gap-24 $padding-gap-24;
+    gap: $padding-gap-24;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding-gap-32 $padding-gap-48;
+    gap: $padding-gap-24;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* = Content = */
+.section-form{
+  @include section-style ($padding-gap-24,$padding-gap-24,$color-bg-primary,$padding-gap-24);
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding-gap-24 $padding-gap-24;
+    gap: $padding-gap-24;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding-gap-32 $padding-gap-48;
+    gap: $padding-gap-24;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+/* = Footer = */
+.section-footer{
+  @include section-style ($padding-gap-24,$padding-gap-24,$color-bg-primary,$padding-gap-16);
+  color: $color-text-paragraph;
+  font-size: $font-size-3xs;
+  line-height: $font-lh-3xs;
+  font-family: $font-family-02;
+  display: grid;
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding-gap-24 $padding-gap-24;
+    gap: $padding-gap-24;
+    font-size: $font-size-2xs;
+  line-height: $font-lh-2xs;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding-gap-32 $padding-gap-48;
+    gap: $padding-gap-24;
+    font-size: $font-size-xs;
+  line-height: $font-lh-xs;
+  }
+}
